@@ -1,0 +1,28 @@
+package webStore;
+import java.util.LinkedList;
+import java.util.*;
+public class WishList {
+
+	/* static because later on it is referenced in a static context and if it isn't 
+	static that does not work */
+	static LinkedList<Integer> wishLister = new LinkedList<>();
+
+	
+	// accepts the item id as a parameter
+    public static String addToWishList(int id) {
+    	//check if the wish list already contains the id, if it does it will not add it again
+        if(wishLister.contains(id)) {
+            return ("This item is already in the wish list");
+        }
+        //if the id isn't in the list it adds it
+        else {
+            wishLister.add(id);
+            return("Added to wish list!");
+        }
+    }
+    
+    // method returns the wish list as a string
+    public static LinkedList<Integer> viewWishList() {
+		return wishLister;
+	}
+}
